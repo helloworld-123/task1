@@ -1,3 +1,4 @@
 # task1
 to make a simple calculator<br>
-this calculator based on c language !
+this calculator based on c language !<br>
+hlo sir welcome to basic calculator
