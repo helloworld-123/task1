@@ -7,35 +7,47 @@ int division();
 int multiplication();
 
 int main(){
-    printf("Hlo sir, this is a basic calculator\n");
-    printf("Which task do you want to do? a(+), s(-), d(/), m(*)\n");
+    // Shuruat mein 'c' ko koi random character de diya (jaise 'x') 
+    // taki loop pehli baar chal sake
+    char c = 'x'; 
     
-    char c;
-    // Added space before %c to clear any leftover newline character in the buffer
-    scanf(" %c", &c); 
-    
-    // Compare directly with character literals like 'a', 's', etc.
-    if (c == 'a'){
-        printf("Acha ji, addition:\n");
-        addition(); // Correct way to call the function
-    }
-    else if (c == 's'){
-        printf("Acha ji, subtraction:\n");
-        subtraction();
-    }
-    else if (c == 'd'){
-        printf("Acha ji, division:\n");
-        division();
-    }
-    else if (c == 'm'){
-        printf("Acha ji, multiplication:\n");
-        multiplication();
-    }
-    else {
-        printf("Invalid choice! Please choose a, s, d, or m.\n");
-    }
+    // Loop tab tak chalega jab tak user 'e' (exit) nahi dabata
+    while(c != 'e'){
+        
+        printf("\nHlo sir, this is a basic calculator\n");
+        printf("Which task do you want to do? a(+), s(-), d(/), m(*), e(exit)\n");
+        printf("Enter your choice: ");
+        
+        // Space before %c is important to clear the input buffer
+        scanf(" %c", &c); 
+        
+        // Agar user ne 'e' dabaya hai, toh loop se bahar nikal jao
+        if (c == 'e') {
+            printf("Exiting... Thank you for using the calculator!\n");
+            break; 
+        }
+        else if (c == 'a'){
+            printf("Acha ji, addition:\n");
+            addition(); 
+        }
+        else if (c == 's'){
+            printf("Acha ji, subtraction:\n");
+            subtraction();
+        }
+        else if (c == 'd'){
+            printf("Acha ji, division:\n");
+            division();
+        }
+        else if (c == 'm'){
+            printf("Acha ji, multiplication:\n");
+            multiplication();
+        }
+        else {
+            printf("Invalid choice! Please choose a, s, d, m, or e.\n");
+        }
+    } // While loop yahan khatam hota hai
 
-    return 0;
+    return 0; // Main function ka return loop ke bahar aayega
 }
 
 int addition(){
@@ -46,7 +58,7 @@ int addition(){
     scanf("%d", &y);
     int sum = x + y;
     printf("Result: %d\n", sum);
-    return sum; // Added return since function type is int
+    return sum; 
 }
 
 int subtraction(){
