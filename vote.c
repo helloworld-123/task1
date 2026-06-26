@@ -17,4 +17,4 @@ int main(){
     printf("You are eligible to vote!\n");
     
     return 0;
-}
+} // now this loop run until user enter a age greater thrn 18 or 18
